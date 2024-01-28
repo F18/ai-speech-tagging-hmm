@@ -364,3 +364,132 @@ Knowledge of the variable $C$ renders to previously independent variables $A$ an
 ![Bayes Net](./figs/bayesnet06.png)
 
 ![Bayes Net](./figs/bayesnet07.png)
+
+## Summary
+
+![Bayes Net](./figs/bayesnet_summary.png)
+
+## Probabilistic Inference
+
+- Evidence = Input (known values)
+- Query = Output (unknown values that we want to know)
+- Hidden = Intermediate (unkown values that we do not care about)
+
+[Great Youtube Video on Probabilistic Inference](https://www.youtube.com/watch?v=YZt5PKPVvCg&t=222s)
+
+In a traditional algorithm or function, you have inputs and the function computes the
+outputs. It is unidirectional. However, in probabilistic inference, you could switch to
+any combination of parameters are your evidence and/or query.
+
+In probabilistic inference, the output is a joint probability distribution. You may be
+interested in the output/query parameters that have the highest probability values given
+the input/evidence provided.
+ 
+### Inference by Enumeration
+
+Inference by enumeration is a brute force method of computing the joint probability. It
+goes through **all** the possibilities and computes the joint probability for each one.
+It is very inefficient.
+
+Example:
+
+![Bayes Net](./figs/bayesnet08.png)
+
+## Appendix
+
+### Challenges in understanding dependence and conditional probability
+
+Conditional probability can indeed be challenging to understand because it involves
+assessing the probability of one event occurring given that another event has already
+occurred. This concept can be counterintuitive and is prone to misunderstandings. Here
+are a few reasons why conditional probability might seem mirky and hard to grasp:
+
+- Context Dependency: The interpretation of conditional probability heavily depends on the
+context of the problem. Different scenarios may lead to different interpretations,
+making it challenging to develop a universal intuition for all situations.
+
+- Subjectivity: In some cases, determining whether events are independent or dependent may
+involve subjective judgments. People may have different opinions on what constitutes a
+relevant or influential factor, leading to different assessments of conditional
+probability.
+
+- Ambiguity in Language: The way problems are phrased can introduce ambiguity and
+confusion. Language plays a crucial role in conveying the conditions and dependencies,
+and slight variations in wording can lead to different interpretations.
+
+- Assumption of Independence: Sometimes, people assume independence when it might not be
+  justified. In real-world scenarios, events are often interconnected in complex ways,
+  and making the assumption of independence without proper justification can lead to
+  incorrect conclusions.
+
+- Lack of Concrete Examples: Understanding conditional probability often relies on
+  concrete examples. If examples are abstract or not relatable, it can be challenging to
+  build an intuitive understanding of the concept.
+
+- Mathematical Complexity: The formal mathematical expressions of conditional
+probability, such as the conditional probability formula,  $P(A | B)= \frac{P(B)}{P(A
+\cap B)}$​, can be intimidating for individuals who are not comfortable with
+mathematical notation. The manipulation of probabilities can add an extra layer of
+complexity.
+
+To enhance understanding, it's helpful to work through concrete examples, visualize
+problems using diagrams or charts, and practice solving problems involving conditional
+probability. Developing a solid foundation in basic probability concepts can also
+contribute to a clearer understanding of conditional probability. Additionally, seeking
+clarification when faced with ambiguous or unclear statements in problem descriptions
+can be valuable in overcoming misunderstandings.
+
+### Dependence vs Causality 
+
+Understanding the difference between dependence and causality is crucial, as these concepts are related but distinct. Let's clarify each term:
+
+#### Dependence
+
+- Definition: Dependence refers to a statistical relationship between two variables or
+events. If the occurrence (or non-occurrence) of one event provides information about
+the occurrence of another event, the two events are considered dependent. 
+
+- Example: If you know that it is raining (event A), it is more likely that people will
+use umbrellas (event B). In this case, the events "rain" and "use of umbrellas" are
+dependent.
+
+#### Causality
+
+- Definition: Causality refers to a cause-and-effect relationship between two variables
+or events. If one event causes another, they are considered causally related. Causation
+implies a direct influence, where changes in one variable result in changes in another.
+
+- Example: Smoking (event A) is a cause of lung cancer (event B). In this case, the act
+of smoking directly influences the occurrence of lung cancer. It's important to note
+that dependence does not necessarily imply causality. Two events can be statistically
+related without one causing the other. Additionally, causality implies a more direct and
+often temporal relationship, whereas dependence is a broader concept encompassing
+various types of statistical relationships.
+
+#### In the context of conditional probability:
+
+- Dependence: If events A and B are dependent, knowing the occurrence or non-occurrence
+  of one event provides information about the probability of the other event.
+- Causality: If A causes B, then knowing the occurrence of A not only provides
+  information about the probability of B but also implies a direct influence of A on B.
+
+Confusion can arise when people mistakenly interpret dependence as causality or vice
+versa. It's essential to carefully consider the nature of the relationship between
+events and be cautious about making causal claims based solely on observational data.
+Methods like randomized controlled trials are often used to establish causal
+relationships by controlling for confounding factors and randomizing the exposure.
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+Hello world
