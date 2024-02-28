@@ -3,8 +3,8 @@
  author: Ramy Rashad
  numbersections: true
  geometry: margin=1.00in
-
 ---
+
 
 # Probability
 
@@ -14,26 +14,28 @@ In this lesson, we will review a few key concepts in probability including:
 - Joint probabilities
 - Conditional probabilities
 
-The basics are simple. Probabilities are numbers between 0 and 1 that represent the
-likelihood of an event occurring. The probability of an event that is certain to occur
-is 1. The probability of an event that is certain not to occur is 0. The probability of
-an event that has a 50% chance of occurring is 0.5. The probability of all events that
-can occur is 1.
+The basics are simple. Probabilities are numbers between 0 and 1 that represent
+the likelihood of an event occurring. The probability of an event that is
+certain to occur is 1. The probability of an event that is certain not to occur
+is 0. The probability of an event that has a 50% chance of occurring is 0.5.
+The probability of all events that can occur is 1.
 
 ## Discrete Distributions
 
-A discrete distribution is a probability distribution that can take on only discrete
-values. For example, a coin toss can only result in two possible outcomes: heads or
-tails. The probability of heads is 0.5 and the probability of tails is 0.5. The
-probability distribution of a coin toss is a discrete distribution.
+A discrete distribution is a probability distribution that can take on only
+discrete values. For example, a coin toss can only result in two possible
+outcomes: heads or tails. The probability of heads is 0.5 and the probability
+of tails is 0.5. The probability distribution of a coin toss is a discrete
+distribution.
 
-When the events are independent, the probability of multiple events occurring is the
-product of their probabilities.
+When the events are independent, the probability of multiple events occurring
+is the product of their probabilities.
 
 ## Joint Probabilities
 
-The joint probability of two events is the probability that both events occur. The joint
-probability of two events is the product of their probabilities and is written as:
+The joint probability of two events is the probability that both events occur.
+The joint probability of two events is the product of their probabilities and
+is written as:
 
 $P(X,Y) = P(X)P(Y)$
 
@@ -432,57 +434,157 @@ probability, such as the conditional probability formula,  $P(A | B)= \frac{P(B)
 mathematical notation. The manipulation of probabilities can add an extra layer of
 complexity.
 
-To enhance understanding, it's helpful to work through concrete examples, visualize
-problems using diagrams or charts, and practice solving problems involving conditional
-probability. Developing a solid foundation in basic probability concepts can also
-contribute to a clearer understanding of conditional probability. Additionally, seeking
-clarification when faced with ambiguous or unclear statements in problem descriptions
-can be valuable in overcoming misunderstandings.
+To enhance understanding, it's helpful to work through concrete examples,
+visualize problems using diagrams or charts, and practice solving problems
+involving conditional probability. Developing a solid foundation in basic
+probability concepts can also contribute to a clearer understanding of
+conditional probability. Additionally, seeking clarification when faced with
+ambiguous or unclear statements in problem descriptions can be valuable in
+overcoming misunderstandings.
 
 ### Dependence vs Causality 
 
-Understanding the difference between dependence and causality is crucial, as these concepts are related but distinct. Let's clarify each term:
+Understanding the difference between dependence and causality is crucial, as
+these concepts are related but distinct. Let's clarify each term:
 
 #### Dependence
 
-- Definition: Dependence refers to a statistical relationship between two variables or
-events. If the occurrence (or non-occurrence) of one event provides information about
-the occurrence of another event, the two events are considered dependent. 
+- Definition: Dependence refers to a statistical relationship between two
+  variables or events. If the occurrence (or non-occurrence) of one event
+  provides information about the occurrence of another event, the two events
+  are considered dependent. 
 
-- Example: If you know that it is raining (event A), it is more likely that people will
-use umbrellas (event B). In this case, the events "rain" and "use of umbrellas" are
-dependent.
+- Example: If you know that it is raining (event A), it is more likely that
+  people will use umbrellas (event B). In this case, the events "rain" and "use
+  of umbrellas" are dependent.
 
 #### Causality
 
-- Definition: Causality refers to a cause-and-effect relationship between two variables
-or events. If one event causes another, they are considered causally related. Causation
-implies a direct influence, where changes in one variable result in changes in another.
+- Definition: Causality refers to a cause-and-effect relationship between two
+  variables or events. If one event causes another, they are considered
+  causally related. Causation implies a direct influence, where changes in one
+  variable result in changes in another.
 
-- Example: Smoking (event A) is a cause of lung cancer (event B). In this case, the act
-of smoking directly influences the occurrence of lung cancer. It's important to note
-that dependence does not necessarily imply causality. Two events can be statistically
-related without one causing the other. Additionally, causality implies a more direct and
-often temporal relationship, whereas dependence is a broader concept encompassing
-various types of statistical relationships.
+- Example: Smoking (event A) is a cause of lung cancer (event B). In this case,
+  the act of smoking directly influences the occurrence of lung cancer. It's
+  important to note that dependence does not necessarily imply causality. Two
+  events can be statistically related without one causing the other.
+  Additionally, causality implies a more direct and often temporal
+  relationship, whereas dependence is a broader concept encompassing various
+  types of statistical relationships.
 
 #### In the context of conditional probability:
 
-- Dependence: If events A and B are dependent, knowing the occurrence or non-occurrence
-  of one event provides information about the probability of the other event.
+- Dependence: If events A and B are dependent, knowing the occurrence or
+  non-occurrence of one event provides information about the probability of the
+  other event.
 - Causality: If A causes B, then knowing the occurrence of A not only provides
-  information about the probability of B but also implies a direct influence of A on B.
+  information about the probability of B but also implies a direct influence of
+  A on B.
 
-Confusion can arise when people mistakenly interpret dependence as causality or vice
-versa. It's essential to carefully consider the nature of the relationship between
-events and be cautious about making causal claims based solely on observational data.
-Methods like randomized controlled trials are often used to establish causal
-relationships by controlling for confounding factors and randomizing the exposure.
+Confusion can arise when people mistakenly interpret dependence as causality or
+vice versa. It's essential to carefully consider the nature of the relationship
+between events and be cautious about making causal claims based solely on
+observational data. Methods like randomized controlled trials are often used to
+establish causal relationships by controlling for confounding factors and
+randomizing the exposure.
+
+### Variable Elimination
+
+- R = Raining
+- T = Traffic (depends on Raining)
+- L = Late for meeting (depends on Traffic)
+
+Question: Am I going to be late? 
+
+$P(+l) = \sum_r \sum_t P(r) P(t | r) P (+l | t)$
+
+With the probability broken down this way, we can write out the tables (like a
+multidimensional matrix) as follows:
+
+![Variable Elimination](./figs/var_elim.png)
+
+A continous process of joining variables together (multiplying values in the
+tables) followed by variable elimination (adding all values that lead to the
+new variable).
+
+## Approximate Inference Sampling
+
+If we don't know the values in the probability tables, then we can still
+proceed by sampling the space. We sample the space and reject any samples that
+do not concern us (i.e. the conditional probability that we are interested in).
+For example, if we are intersted in the grass being wet, which depends on it
+being cloudy, then we can reject any sample for which it is not cloudy. Thi is
+called **Rejection Sampling**. The problem is that if the probability you're
+interested in is inherently **low** or unlikely, then we end of throwing out a
+lot of samples.
+
+### Likelihood Weighting
+
+Likelihood weighting gives us a way to keep all the samples. We fix the
+variables we want (like only sample points that are cloudy). We can assign a
+probability to each sample and use them to weight the samples which makes
+everything consistent.
+
+### Gibbs Sampling
+
+Gibbs sampling is a Markov Chain Monte Carlo (MCMC) method that generates a
+sequence of samples from the joint probability distribution of a set of random
+variables. It is a special case of the Metropolis-Hastings algorithm, where the
+proposal distribution is a conditional distribution of a single variable given
+the current values of all other variables. Gibbs sampling is particularly
+useful for sampling from high-dimensional distributions, where direct sampling
+methods may be impractical. It is also used for approximate inference in
+Bayesian networks and other probabilistic models. The algorithm iteratively
+samples each variable from its conditional distribution given the current values
+of all other variables, effectively exploring the joint distribution of the
+variables. The samples generated by Gibbs sampling can be used to estimate
+marginal probabilities, compute expectations, and perform other probabilistic
+inference tasks.
 
 
+## Lesson Summary
 
+In this lesson, we learned how to make inferences (query) from Bayes Nets based on the
+evidence variables and the conditional probabilities as configured in the Bayes Nets. of
+the evidence variables as defined in the network.
 
+There are two algorithms that to compute exact inferences:
 
+- **Enumeration**: the query’s conditional probability is computed by summing the terms from
+  the full joint distribution.
+- **Variable Elimination**: an algorithm to reduce the enumeration computation by doing the
+  repeated calculations once and store the results for later re-use.
+
+However, it is computationally expensive to make exact inference from a large and highly
+connected Bayes Network. In these cases, we can approximate inferences by sampling.
+Sampling is a technique to select and count the occurances of the query and evidence
+variables to estimate the probability distributions in the network. We looked at four
+sampling techniques as follows:
+
+- **Direct sampling**: the simplest form of samples generation from a known probability
+  distribution. For example, to sample the odds of Head or Tail in a coin flip, we can
+  randomly generate the events based on uniform probability distribution (assuming we
+  use a non-bias coin).
+- **Rejection sampling**: generates samples from the known distribution in the network
+  and rejects the non-matching evidence.
+- **Likelihood sampling**: is similar to rejection sampling but generating only events
+  that are consistent with the evidence.
+- **Gibbs sampling**: initiates an arbitrary state and generates the next state by
+  randomly sampling a non-evidence variable, while keeping all evidence variables fixed.
+
+In the final lesson, we will learn the Hidden Markov Model (HMM) and its application in
+the Natural Language Processing task to tag Parts of Speech. HMM assumes unobservable
+states and computes the transition and emission probabilities from one state to another.
+
+### Additional Resources
+
+The following are other informational resources on this topic:
+
+- [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling) & [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm)
+- [Markov Chain Monte Carlo Sampling](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo)
+- [Variational Inference](https://docs.pymc.io/api/inference.html)
+- [Bayesian Neural Networks](https://arxiv.org/abs/1801.07710)
 
 
 
